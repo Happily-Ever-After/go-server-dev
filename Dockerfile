@@ -3,7 +3,7 @@ FROM golang:1.15
 # WORKDIR /src
 
 COPY main.go .
-
+COPY rds-combined-ca-bundle.pem .
 RUN go get -d -v ./...
 RUN go build -o main .
 
@@ -11,4 +11,4 @@ RUN go build -o main .
 
 # CMD ["/main"]
 
-CMD ["go run ."]
+CMD ["./main"]
