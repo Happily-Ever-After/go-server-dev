@@ -383,8 +383,9 @@ const (
 
 	// Which instances to read from
 	readPreference = "primaryPreferred"
-
-	connectionStringTemplate = "mongodb://happilyeverdev:ddbdev260121@happilyeverco-dev.cluster-c3br2ymfzopu.ap-south-1.docdb.amazonaws.com:27017/?ssl=true&ssl_ca_certs=rds-combined-ca-bundle.pem&replicaSet=rs0&readPreference=primaryPreferred&retryWrites=false"
+	
+	connectionStringTemplate = "mongodb://%s:%s@%s/?ssl=true&ssl_ca_certs=rds-combined-ca-bundle.pem&readPreference=%s&retryWrites=false"
+// 	connectionStringTemplate = "mongodb://happilyeverdev:ddbdev260121@happilyeverco-dev.cluster-c3br2ymfzopu.ap-south-1.docdb.amazonaws.com:27017/?ssl=true&ssl_ca_certs=rds-combined-ca-bundle.pem&replicaSet=rs0&readPreference=primaryPreferred&retryWrites=false"
 )
 
 func main() {
