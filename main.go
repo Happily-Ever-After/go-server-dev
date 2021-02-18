@@ -422,7 +422,7 @@ func main() {
 	// router.HandleFunc("/ops/appointmentUpdate", appointmentUpdate).Methods("PUT")
 	router.HandleFunc("/user/{id}", getUser).Methods("GET")
 	router.HandleFunc("/user/{id}", updateUser).Methods("PUT")
-	http.ListenAndServe(":3001", handlers.CORS(handlers.AllowedHeaders([]string{"X-Requested-With", "Content-Type", "Authorization"}), handlers.AllowedMethods([]string{"GET", "POST", "PUT", "HEAD", "OPTIONS"}), handlers.AllowedOrigins([]string{"*"}))(router))
+	http.ListenAndServe(":3000", handlers.CORS(handlers.AllowedHeaders([]string{"X-Requested-With", "Content-Type", "Authorization"}), handlers.AllowedMethods([]string{"GET", "POST", "PUT", "HEAD", "OPTIONS"}), handlers.AllowedOrigins([]string{"*"}))(router))
 }
 
 func getCustomTLSConfig(caFile string) (*tls.Config, error) {
