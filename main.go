@@ -61,8 +61,8 @@ func signup(response http.ResponseWriter, request *http.Request) {
 	var user User
 	var dbUser User
 	json.NewDecoder(request.Body).Decode(&user)
-	collection := client.Database("happilyeverafter").Collection("Users")
-// 	collection := client.Database("happilyeverco-dev").Collection("Users")
+// 	collection := client.Database("happilyeverafter").Collection("Users")
+	collection := client.Database("happilyeverco-dev").Collection("Users")
 	ctx, _ := context.WithTimeout(context.Background(), 10*time.Second)
 	err := collection.FindOne(ctx, User{Email: user.Email}).Decode(&dbUser)
 	if err == nil {
