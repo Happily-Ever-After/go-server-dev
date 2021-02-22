@@ -394,7 +394,8 @@ func main() {
 	if err != nil {
 		log.Fatalf("Failed getting TLS configuration: %v", err)
 	}
-	client, err := mongo.NewClient(options.Client().ApplyURI(connectionURI).SetTLSConfig(tlsConfig))
+	client1, err := mongo.NewClient(options.Client().ApplyURI(connectionURI).SetTLSConfig(tlsConfig))
+	client = client1
 	if err != nil {
 		log.Fatalf("Failed to create client: %v", err)
 	}
